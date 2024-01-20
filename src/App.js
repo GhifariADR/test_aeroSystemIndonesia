@@ -1,31 +1,26 @@
 import React, { useEffect, useState } from "react";
 import titleize from "titleize";
 import './App.css'
+import { useNavigate } from "react-router-dom";
+
 function App() {
 
   const [product, setProduct] = useState([])
   const [Search, setSearch] = useState("")
+  const navigate = useNavigate()
 
   const getFlight = async (val) => {
 
     if(val) {
       const response = await fetch(`http://localhost:3000/data?destination=${val}`)
       const respJson = await response.json()
-      console.log(respJson);
       setProduct(respJson)
     } else {
       const response = await fetch(`http://localhost:3000/data`)
       const respJson = await response.json()
-      console.log(respJson);
       setProduct(respJson)
     }
 
-  }
-
-  const getSearch = async (val) => {
-    const response = await fetch(`http://localhost:3000/data?destination=${val}`)
-    const respJson = await response.json()
-    console.log(respJson);
   }
 
   const handleSearch = (e) => {
@@ -35,7 +30,6 @@ function App() {
 
   const handeSubmit = () => {
     const capital = titleize(Search);
-    console.log(capital);
     getFlight(capital);
   }
 
@@ -46,6 +40,7 @@ function App() {
 
   return (
     <div className="wrapper" >
+      <button onClick={() => navigate('/admin')} >Login As Admin</button>
       <div className="tittle">
       Bandung international Airport Today Flight Schdule  
       </div>

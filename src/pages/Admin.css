@@ -1,0 +1,40 @@
+h1 {
+    text-align: center;
+}
+
+table, th, td {
+    border:1px solid black;
+    background: #F8F7F3;
+    padding: 9px;
+}
+
+.flight-input {
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+}
+
+.btn-add {
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.btn-update {
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    visibility: hidden;
+}
+
+.btn-cancel {
+    border: none;
+    margin: 5px;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    visibility: hidden;
+}
